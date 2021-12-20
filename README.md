@@ -1,15 +1,4 @@
-# agro-hack
-The solution from neuropeppa team for pigs tracking and computing theirs activity
-
-<div align="center">
-
-[![license](https://shields.io/badge/license-MIT-green)](https://github.com/Ilyabasharov/agro-hack/blob/main/LICENSE)
-
-[📘Introduction](https://github.com/Ilyabasharov/agro-hack/blob/main/README.md#introduction) |
-[🛠️Installation](https://github.com/Ilyabasharov/agro-hack/blob/main/README.md#installation) |
-[👀Project Structure](https://github.com/Ilyabasharov/agro-hack/blob/main/README.md#project-structure)
-
-</div>
+# cv_project_health_pigs
 
 ## Introduction
 
