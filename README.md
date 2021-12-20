@@ -23,10 +23,6 @@ The master branch works with **PyTorch 1.10** and **CUDA 10.2**.
   
 </details>
 
-## License
-
-This project is released under the [MIT license](LICENSE).
-
 ## Project Structure
 
 ```
