@@ -1,0 +1,46 @@
+## base args to put in tracker
+
+offsetEmb:
+    num_points: 1500
+    margin: 0.2
+    border_ic: 3
+    outputD: 32
+    category: true
+
+# here 2 variants of embeddings
+# you should choose only one
+
+main: 'pigs1'
+
+trackHelper:
+    pigs1:
+        keep_alive: 10
+        mask_iou: false
+        euclidean_scale: 1.344
+        euclidean_offset: 9.447
+        association_threshold: 0.48
+        means_threshold: 70.0
+        mask_iou_scale: 0.402
+        class_id: 0
+        
+    pigs2:
+        keep_alive: 10
+        mask_iou: false
+        euclidean_scale: 1.009
+        euclidean_offset: 8.81
+        association_threshold: 0.817
+        means_threshold: 90.0
+        mask_iou_scale: 0.733
+        class_id: 0
+
+model:
+    pigs1: '../weights/pigs1.pth'
+    pigs2: '../weigths/pigs2.pth'
+
+catEmb:
+    - [+0.948, +0.456, +0.167]
+    - [+0.100, -0.100, +0.100]
+    - [+0.546, -0.619, -2.630]
+    - [-0.100, +0.100, -0.100]
+
+device: 'cuda:0'

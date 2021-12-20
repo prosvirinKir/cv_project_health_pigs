@@ -1,0 +1,5 @@
+## base args to put in module
+
+detector_cfg_path: '../configs/detector/htc.yaml'
+tracker_cfg_path: '../configs/tracker/pointtrack.yaml'
+activity_cfg_path: '../configs/activity.yaml'

@@ -1,0 +1,8 @@
+## base args to put in activity
+
+water_l: '../masks/water_l.npy'
+water_r: '../masks/water_r.npy'
+feed: '../masks/feed.npy'
+treshold: 0.05
+low: 1
+high: 5

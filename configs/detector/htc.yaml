@@ -1,0 +1,7 @@
+## base args to put in tracker
+
+config: '../configs/detector/custom_htc.py'
+checkpoint: '../weights/htc.pth'
+device: 'cuda:0'
+mask: '../masks/cage_mask.npy'
+treshold: 0.8
