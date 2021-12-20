@@ -1,0 +1,14 @@
+-f https://download.openmmlab.com/mmcv/dist/cu102/torch1.10.0/index.html
+mmcv-full
+mmdet
+
+gdown
+opencv-python
+PyYAML
+numpy
+scipy
+matplotlib
+munkres
+pycocotools
+tqdm
+h5py
