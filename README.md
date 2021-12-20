@@ -43,7 +43,7 @@ The master branch works with **PyTorch 1.10** and **CUDA 10.2**.
 
 ```bash
 # clone the repo
-git clone https://github.com/Ilyabasharov/agro-hack.git
+git clone https://github.com/prosvirinKir/cv_project_health_pigs.git
 cd agro-hack
 
 # install the requirements
