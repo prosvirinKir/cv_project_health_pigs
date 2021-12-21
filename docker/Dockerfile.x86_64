@@ -1,0 +1,64 @@
+FROM nvidia/cuda:11.3.0-cudnn8-devel-ubuntu20.04
+
+MAINTAINER Ilya Basharov <ilya.basharov.98@mail.ru>
+
+RUN apt-get update && \
+    apt-get -y install sudo && \
+    apt-get install -y --no-install-recommends \
+    zip \
+    unzip \
+    locales \
+    build-essential \
+    git \
+    curl \
+    wget \
+    vim \
+    ca-certificates \
+    libsparsehash-dev \
+    ffmpeg \
+    libsm6 \
+    libxext6 \
+    libgl1-mesa-glx \
+    libpq-dev \
+    python3-dev \
+    libjpeg-dev \
+    libpng-dev \
+    python3-pip && \
+    apt-get clean && \
+    rm -rf /.root/cache && \
+    rm -rf /var/lib/apt/lists/*
+
+ENV FORCE_CUDA="1"
+ENV CUDA cu113
+
+# CUDA 11.3 path
+ENV PATH=/usr/local/cuda-11.3/bin:$PATH
+ENV CUDA_PATH=/usr/local/cuda-11.3
+ENV CUDA_HOME=/usr/local/cuda-11.3
+ENV LD_LIBRARY_PATH=/usr/local/cuda-11.3/lib64:$LD_LIBRARY_PATH
+
+# Pip setup
+ENV PATH=/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+RUN python3 -m pip install 
+    pip --upgrade \
+    wheel \
+    setuptools
+
+# User setup
+ARG USER=pets
+ARG UID=1000
+ARG GID=1000
+ARG PW=user
+ARG PROJECT_PATH=/home
+
+RUN useradd -m ${USER} --uid=${UID} \
+    && echo "${USER}:${PW}" | chpasswd \
+    && adduser ${USER} sudo \
+    && usermod -s /bin/bash ${USER}
+
+WORKDIR ${PROJECT_PATH}/${USER}/
+
+RUN usermod -a -G sudo ${USER}
+
+COPY --chown=${USER}:${USER} . ${PROJECT_PATH}/${USER}/
+RUN pip install -r ${PROJECT_PATH}/${USER}/requirements.txt

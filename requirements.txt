@@ -1,4 +1,7 @@
--f https://download.openmmlab.com/mmcv/dist/cu102/torch1.10.0/index.html
+-f https://download.pytorch.org/whl/cu113/torch_stable.html
+torch==1.10.1+cu113
+
+-f https://download.openmmlab.com/mmcv/dist/cu113/torch1.10.0/index.html
 mmcv-full
 mmdet
 
