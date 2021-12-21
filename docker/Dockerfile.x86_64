@@ -39,7 +39,7 @@ ENV LD_LIBRARY_PATH=/usr/local/cuda-11.3/lib64:$LD_LIBRARY_PATH
 
 # Pip setup
 ENV PATH=/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-RUN python3 -m pip install 
+RUN python3 -m pip install \
     pip --upgrade \
     wheel \
     setuptools
