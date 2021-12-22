@@ -55,7 +55,7 @@ cd scripts && sh download_weights.sh
 
 ## Running the project
 
-You can evaluate at video. For this you should define input_path and output_path in [main.py](https://github.com/Ilyabasharov/agro-hack/blob/main/src/main.py) file.
+You can evaluate at video. For this you should define input_path and output_path in [main.py](https://github.com/prosvirinKir/cv_project_health_pigs/blob/main/src/main.py) file.
 Read this file before you start working!
 
 ```bash
